@@ -1,0 +1,16 @@
+<%- include('../partials/head.ejs') %>
+  <body>
+    <div class="container">
+      <h1>Weather in <%= weather.name %></h1>
+      <div class="weather-item">
+      <p>Temperature: <%= (weather.main.temp - 273.15).toFixed(2) %>°C</p>
+      <p>Humidity: <%= weather.main.humidity %>%</p>
+      <p>Conditions: <%= weather.weather[0].description %></p>
+    </div>
+      <form action="/" method="get">
+        <button type="submit">Get More Weather</button>
+      </form>
+      
+    </div>
+  </body>
+</html>

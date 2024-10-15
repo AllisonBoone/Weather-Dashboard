@@ -1,0 +1,244 @@
+/* Universal reset styles */
+/* Apply box-sizing to include padding and border in element's total width/height */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; /* Removes default margins and padding */
+}
+
+/* Text adjustments and accessibility enhancements for different browsers */
+html {
+  font-size: 100%; /* Font size scales with user preferences */
+  -webkit-text-size-adjust: 100%; /* Safari text size adjustment */
+  -ms-text-size-adjust: 100%; /* IE text size adjustment */
+  -webkit-font-smoothing: antialiased; /* Improves text rendering on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Improves text rendering on macOS */
+}
+
+/* Smooth scrolling behavior when the page is focused (e.g., using tab navigation) */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%; /* Ensure full height layout */
+  scroll-behavior: smooth; /* Smooth scrolling for internal anchor links */
+}
+
+/* Basic body settings */
+body {
+  line-height: 1.5; /* Improves text readability */
+  color: #333; /* Dark text for readability */
+  background-color: #fff; /* Light background for better contrast */
+  font-size: clamp(
+    16px,
+    2vw,
+    20px
+  ); /* Font size scales between 16px and 20px */
+}
+
+/* Ensures media elements such as images, videos, etc., don't exceed their container's width */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%; /* Makes sure media is responsive */
+}
+
+/* Responsive iframes */
+iframe {
+  max-width: 100%; /* Prevents overflowing */
+  height: auto;
+}
+
+/* Form elements inherit font styles for consistent typography */
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Inherit font from parent */
+  background: none; /* Removes default background */
+  border: none; /* Removes default border */
+  padding: 0; /* Removes default padding */
+}
+
+button {
+  cursor: pointer; /* Displays pointer cursor on hover */
+}
+
+/* Remove unnecessary styles for input search in mobile browsers */
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* Disabled elements are not focusable and are faded */
+:disabled {
+  pointer-events: none;
+  opacity: 0.5; /* Fades disabled elements */
+}
+
+/* Reset list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Ensures text wraps properly in paragraphs and headings */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word; /* Prevents text overflow */
+}
+
+/* Underlines are applied only when necessary */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Shows a focus outline for accessibility */
+:focus {
+  outline: 2px solid blue; /* Default focus outline */
+  outline-offset: 2px; /* Provides spacing between outline and element */
+}
+
+:focus-visible {
+  outline: 2px solid blue; /* Ensures keyboard users see focus outline */
+  outline-offset: 2px;
+}
+
+/* Cursors for interactive elements */
+a,
+button,
+input,
+textarea,
+select {
+  cursor: pointer;
+}
+
+/* Reset table styles for consistency */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* Vertical alignment for inline elements */
+img,
+button,
+input,
+select,
+textarea {
+  vertical-align: middle;
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Reduces motion/animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* PAGE SPECIFIC STYLES */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #add8e6;
+  margin: 0;
+}
+
+h1 {
+  font-family: Nunito, Roboto, sans-serif;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+p,
+form {
+  font-family: Poppins, 'Open Sans', 'Helvetica Neue';
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+input {
+  border: 1px solid #000;
+  padding: 2px;
+}
+
+button {
+  margin-left: 10px;
+  background-color: #98fb98;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 50%;
+  width: 75%;
+}
+
+.forecast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 50px;
+  width: 75%;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.forecast-item,
+.weather-item,
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+}

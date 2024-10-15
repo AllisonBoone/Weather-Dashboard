@@ -1,0 +1,20 @@
+<%- include('../partials/head.ejs') %>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Weather Dashboard</h1>
+      <div class="options">
+      <form action="/weather" method="get">
+        <label for="city">Enter a City:</label>
+        <input type="text" id="city" name="city" required />
+        <button type="submit">Get Weather</button>
+      </form>
+      <form action="/forecast" method="get">
+        <label for="city">Enter a City:</label>
+        <input type="text" id="city" name="city" required />
+        <button type="submit">Get Forecast</button>
+      </form>
+    </div>
+      
+    </div>
+  </body>
+</html>
