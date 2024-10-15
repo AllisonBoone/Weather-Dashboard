@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Build output
+dist/
+build/
+
+# OS specific files
+.DS_Store          # macOS
+Thumbs.db         # Windows
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Coverage directory used by tools like istanbul
+coverage/
